@@ -34,7 +34,7 @@ export function MetricTooltip() {
           content="Pourcentage de visiteurs qui effectuent l'action souhaitée"
           position="top"
         >
-          <InfoIcon size="sm" className="text-blue-600" />
+          <InfoIcon className="text-blue-600" />
         </CustomTooltip>
       </div>
       <p className="text-2xl font-bold text-blue-600">2.4%</p>
@@ -58,7 +58,7 @@ export function DashboardExamples() {
               content="Score consolidé basé sur votre performance across tous les modèles IA"
               position="top"
             >
-              <InfoIcon size="sm" />
+              <InfoIcon className="text-blue-600" />
             </CustomTooltip>
           </div>
           <p className="text-2xl font-bold">87</p>
@@ -71,7 +71,7 @@ export function DashboardExamples() {
               content="Évolution de votre visibilité sur les 30 derniers jours"
               position="top"
             >
-              <InfoIcon size="sm" />
+              <InfoIcon className="text-green-600" />
             </CustomTooltip>
           </div>
           <p className="text-2xl font-bold text-green-600">+5.2%</p>
@@ -109,7 +109,7 @@ export function CompetitorsExamples() {
           content="Comparez votre performance avec vos principaux concurrents dans les réponses IA"
           position="bottom"
         >
-          <InfoIcon size="lg" />
+          <InfoIcon />
         </CustomTooltip>
       </div>
 
@@ -122,7 +122,7 @@ export function CompetitorsExamples() {
               content="Classement basé sur la position moyenne de chaque marque dans les réponses des modèles IA"
               position="right"
             >
-              <InfoIcon size="sm" />
+              <InfoIcon />
             </CustomTooltip>
           </div>
         </div>
@@ -160,7 +160,7 @@ export function SettingsExamples() {
                 content="Définit à quelle fréquence l'analyse de votre visibilité sera effectuée automatiquement"
                 position="top"
               >
-                <InfoIcon size="sm" />
+                <InfoIcon />
               </CustomTooltip>
             </div>
             <select className="border rounded px-3 py-1">

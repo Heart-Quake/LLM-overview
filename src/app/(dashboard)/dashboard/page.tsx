@@ -68,10 +68,10 @@ export default function DashboardPage() {
             <p className="text-gray-600">Vue d'ensemble de votre visibilité IA</p>
           </div>
           <CustomTooltip 
-            content="Tableau de bord principal présentant un aperçu complet de votre performance de visibilité dans les modèles d'IA, avec métriques clés et tendances"
+            content="Vue d'ensemble de votre visibilité dans les réponses des modèles d'IA avec métriques clés et tendances en temps réel"
             position="auto"
           >
-            <InfoIcon size="lg" />
+            <InfoIcon />
           </CustomTooltip>
         </div>
         <div className="flex space-x-3">
@@ -104,10 +104,10 @@ export default function DashboardPage() {
             <div className="flex items-center gap-2">
               <CardTitle className="text-sm font-medium">Score de visibilité</CardTitle>
               <CustomTooltip 
-                content="Score global calculé sur votre position moyenne dans les réponses des modèles IA. Plus le score est élevé, meilleure est votre visibilité"
+                content="Score moyen de visibilité basé sur votre position dans les réponses des LLM. Plus élevé = meilleure visibilité"
                 position="auto"
               >
-                <InfoIcon size="sm" />
+                <InfoIcon />
               </CustomTooltip>
             </div>
             <BarChart3 className="h-4 w-4 text-muted-foreground" />
@@ -128,10 +128,10 @@ export default function DashboardPage() {
             <div className="flex items-center gap-2">
               <CardTitle className="text-sm font-medium">Prompts analysés</CardTitle>
               <CustomTooltip 
-                content="Nombre total de requêtes/questions analysées pour mesurer votre présence dans les réponses IA"
+                content="Pourcentage de requêtes où votre marque apparaît dans les réponses d'IA par rapport au total analysé"
                 position="auto"
               >
-                <InfoIcon size="sm" />
+                <InfoIcon />
               </CustomTooltip>
             </div>
             <MessageSquare className="h-4 w-4 text-muted-foreground" />
@@ -155,7 +155,7 @@ export default function DashboardPage() {
                 content="Nombre de fois où votre marque ou produits ont été mentionnés dans les réponses des modèles IA"
                 position="auto"
               >
-                <InfoIcon size="sm" />
+                <InfoIcon />
               </CustomTooltip>
             </div>
             <Users className="h-4 w-4 text-muted-foreground" />
@@ -176,10 +176,10 @@ export default function DashboardPage() {
             <div className="flex items-center gap-2">
               <CardTitle className="text-sm font-medium">Position moyenne</CardTitle>
               <CustomTooltip 
-                content="Position moyenne de votre marque dans les réponses IA (1 = première position). Plus c'est bas, mieux c'est"
+                content="Position moyenne de votre marque quand elle est mentionnée dans les réponses. 1.0 = toujours premier"
                 position="auto"
               >
-                <InfoIcon size="sm" />
+                <InfoIcon />
               </CustomTooltip>
             </div>
             <BarChart3 className="h-4 w-4 text-muted-foreground" />
@@ -204,7 +204,7 @@ export default function DashboardPage() {
             <div className="flex items-center gap-2">
               <CardTitle>Évolution du score de visibilité</CardTitle>
               <CustomTooltip 
-                content="Graphique montrant l'évolution de votre score de visibilité sur les 7 derniers jours pour identifier les tendances"
+                content="Tendance d'évolution de votre visibilité IA par rapport à la période précédente"
                 position="auto"
               >
                 <InfoIcon />

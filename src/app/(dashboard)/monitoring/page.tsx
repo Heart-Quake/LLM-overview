@@ -70,10 +70,10 @@ export default function MonitoringPage() {
             <p className="text-gray-600">Surveillez votre marque et vos concurrents en temps réel</p>
           </div>
           <CustomTooltip 
-            content="Surveillance en temps réel de votre marque et de vos concurrents dans les réponses des modèles IA, avec alertes et métriques de performance"
+            content="Surveillance en temps réel de la visibilité de votre marque dans les réponses des LLM avec alertes automatiques"
             position="auto"
           >
-            <InfoIcon size="lg" />
+            <InfoIcon />
           </CustomTooltip>
         </div>
         <Button>
@@ -169,7 +169,7 @@ export default function MonitoringPage() {
                         content="Score global calculé sur la base de la position moyenne et du taux de mention de cette marque"
                         position="auto"
                       >
-                        <InfoIcon size="sm" />
+                        <InfoIcon />
                       </CustomTooltip>
                     </div>
                     <p className="text-2xl font-bold text-blue-600">{brand.visibilityScore}%</p>
@@ -181,7 +181,7 @@ export default function MonitoringPage() {
                         content="Nombre de mentions de cette marque sur le total des prompts analysés"
                         position="auto"
                       >
-                        <InfoIcon size="sm" />
+                        <InfoIcon />
                       </CustomTooltip>
                     </div>
                     <p className="text-lg font-semibold">{brand.mentions}/{brand.totalPrompts}</p>
@@ -193,7 +193,7 @@ export default function MonitoringPage() {
                         content="Position moyenne de cette marque dans les réponses IA quand elle est mentionnée (1 = première position)"
                         position="auto"
                       >
-                        <InfoIcon size="sm" />
+                        <InfoIcon />
                       </CustomTooltip>
                     </div>
                     <p className="text-lg font-semibold">{brand.avgPosition}</p>
@@ -205,7 +205,7 @@ export default function MonitoringPage() {
                         content="Horodatage de la dernière fois où cette marque a été mentionnée dans une réponse IA"
                         position="auto"
                       >
-                        <InfoIcon size="sm" />
+                        <InfoIcon />
                       </CustomTooltip>
                     </div>
                     <p className="text-sm text-gray-900">{brand.lastMention}</p>
@@ -217,7 +217,7 @@ export default function MonitoringPage() {
                         content="Classement de cette marque par rapport aux autres sur la base du score de visibilité"
                         position="auto"
                       >
-                        <InfoIcon size="sm" />
+                        <InfoIcon />
                       </CustomTooltip>
                     </div>
                     <p className="text-lg font-semibold">#{index + 1}</p>

@@ -197,10 +197,10 @@ export default function SourcesPage() {
             <p className="text-gray-600">Suivez les sources qui citent votre marque dans les réponses IA</p>
           </div>
           <CustomTooltip 
-            content="Analyse détaillée des sites web, articles et contenus utilisés par les modèles IA pour répondre aux questions concernant votre marque"
+            content="Découvrez et analysez les sources d'information qui influencent la visibilité de votre marque dans l'IA"
             position="auto"
           >
-            <InfoIcon size="lg" />
+            <InfoIcon />
           </CustomTooltip>
         </div>
         <div className="flex items-center space-x-2">

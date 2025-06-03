@@ -109,7 +109,7 @@ export default function SettingsPage() {
   const [activeTab, setActiveTab] = useState("llm")
   const [editingBrand, setEditingBrand] = useState<number | null>(null)
   const [newBrandName, setNewBrandName] = useState("")
-  
+
   // États pour les clés API des LLM
   const [apiKeys, setApiKeys] = useState<Record<string, string>>(() => {
     const keys: Record<string, string> = {}
@@ -635,7 +635,7 @@ export default function SettingsPage() {
                   defaultValue="user@example.com"
                   className="mt-1"
                 />
-              </div>
+                  </div>
 
               <div>
                 <Label htmlFor="notification-frequency">Fréquence des alertes</Label>
@@ -656,13 +656,13 @@ export default function SettingsPage() {
         </TabsContent>
 
         <TabsContent value="account" className="space-y-6">
-          <Card>
-            <CardHeader>
-              <CardTitle>Informations du Compte</CardTitle>
-              <CardDescription>
+            <Card>
+              <CardHeader>
+                <CardTitle>Informations du Compte</CardTitle>
+                <CardDescription>
                 Gérez vos informations personnelles et préférences
-              </CardDescription>
-            </CardHeader>
+                </CardDescription>
+              </CardHeader>
             <CardContent className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
@@ -693,37 +693,37 @@ export default function SettingsPage() {
                 />
               </div>
 
-              <div>
-                <Label htmlFor="company">Entreprise</Label>
+                <div>
+                  <Label htmlFor="company">Entreprise</Label>
                 <Input
                   id="company"
                   defaultValue="Mon Entreprise"
                   className="mt-1"
                 />
-              </div>
+                </div>
 
-              <div>
-                <Label htmlFor="timezone">Fuseau horaire</Label>
-                <Select defaultValue="europe/paris">
-                  <SelectTrigger className="mt-1">
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="europe/paris">Europe/Paris</SelectItem>
-                    <SelectItem value="america/new_york">America/New_York</SelectItem>
-                    <SelectItem value="asia/tokyo">Asia/Tokyo</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
+                <div>
+                  <Label htmlFor="timezone">Fuseau horaire</Label>
+                  <Select defaultValue="europe/paris">
+                    <SelectTrigger className="mt-1">
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="europe/paris">Europe/Paris</SelectItem>
+                      <SelectItem value="america/new_york">America/New_York</SelectItem>
+                      <SelectItem value="asia/tokyo">Asia/Tokyo</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
 
               <div className="pt-6">
                 <div className="flex space-x-2">
                   <Button>Sauvegarder les modifications</Button>
                   <Button variant="outline">Annuler</Button>
                 </div>
-              </div>
-            </CardContent>
-          </Card>
+                </div>
+              </CardContent>
+            </Card>
 
           <Card>
             <CardHeader>

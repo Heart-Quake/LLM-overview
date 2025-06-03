@@ -19,7 +19,7 @@ export default function GrowthPage() {
               content="Suivez l'évolution de votre visibilité IA dans le temps grâce à des métriques clés et des objectifs personnalisés"
               position="auto"
             >
-              <InfoIcon size="lg" />
+              <InfoIcon />
             </CustomTooltip>
           </div>
           <p className="text-gray-600">Analysez l'évolution de votre visibilité IA dans le temps</p>
@@ -45,7 +45,7 @@ export default function GrowthPage() {
                 content="Score global de visibilité basé sur votre position moyenne dans les réponses IA. Un score plus élevé indique une meilleure visibilité"
                 position="auto"
               >
-                <InfoIcon size="sm" className="text-blue-600" />
+                <InfoIcon className="text-blue-600" />
               </CustomTooltip>
             </div>
             <p className="text-2xl font-bold text-blue-600">91</p>
@@ -59,7 +59,7 @@ export default function GrowthPage() {
                 content="Nombre total de fois où votre marque a été mentionnée dans les réponses des modèles IA durant cette période"
                 position="auto"
               >
-                <InfoIcon size="sm" className="text-green-600" />
+                <InfoIcon className="text-green-600" />
               </CustomTooltip>
             </div>
             <p className="text-2xl font-bold text-green-600">105</p>
@@ -73,7 +73,7 @@ export default function GrowthPage() {
                 content="Taux de croissance moyen de votre visibilité IA calculé sur les dernières périodes d'analyse"
                 position="auto"
               >
-                <InfoIcon size="sm" className="text-purple-600" />
+                <InfoIcon className="text-purple-600" />
               </CustomTooltip>
             </div>
             <p className="text-2xl font-bold text-purple-600">+8.2%</p>
@@ -102,7 +102,7 @@ export default function GrowthPage() {
                   content="Objectif d'atteindre un score de visibilité supérieur à 95 points, ce qui représente une excellente présence dans les réponses IA"
                   position="auto"
                 >
-                  <InfoIcon size="sm" />
+                  <InfoIcon />
                 </CustomTooltip>
               </div>
               <span className="text-sm text-gray-600">• Objectif</span>
@@ -123,7 +123,7 @@ export default function GrowthPage() {
                   content="Objectif d'obtenir au moins 100 mentions de votre marque par période d'analyse pour maintenir une présence constante"
                   position="auto"
                 >
-                  <InfoIcon size="sm" />
+                  <InfoIcon />
                 </CustomTooltip>
               </div>
               <span className="text-sm text-gray-600">• Objectif</span>
@@ -159,7 +159,7 @@ export default function GrowthPage() {
                   content="Première fois que votre score de visibilité a dépassé le seuil des 85 points, marquant une excellente progression"
                   position="auto"
                 >
-                  <InfoIcon size="sm" className="text-green-600" />
+                  <InfoIcon className="text-green-600" />
                 </CustomTooltip>
               </div>
               <p className="text-sm text-gray-600">Avril 2024</p>
@@ -175,7 +175,7 @@ export default function GrowthPage() {
                   content="Votre marque apparaît maintenant en moyenne dans les 2 premières positions des réponses IA, un excellent indicateur de visibilité"
                   position="auto"
                 >
-                  <InfoIcon size="sm" className="text-blue-600" />
+                  <InfoIcon className="text-blue-600" />
                 </CustomTooltip>
               </div>
               <p className="text-sm text-gray-600">Mai 2024</p>
