@@ -1,0 +1,152 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  emailVerified DateTime?
+  image         String?
+  accounts      Account[]
+  sessions      Session[]
+  prompts       Prompt[]
+  brands        Brand[]
+  competitors   Competitor[]
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model Brand {
+  id          String   @id @default(cuid())
+  name        String
+  description String?
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  mentions    BrandMention[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@unique([name, userId])
+}
+
+model Competitor {
+  id          String   @id @default(cuid())
+  name        String
+  description String?
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  mentions    CompetitorMention[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@unique([name, userId])
+}
+
+model Prompt {
+  id          String   @id @default(cuid())
+  text        String
+  category    String?
+  tags        String?  // Stored as comma-separated string: "tag1,tag2,tag3"
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  responses   LLMResponse[]
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model LLMResponse {
+  id              String   @id @default(cuid())
+  promptId        String
+  prompt          Prompt   @relation(fields: [promptId], references: [id], onDelete: Cascade)
+  llmProvider     String   // "openai", "anthropic", "google", etc.
+  modelName       String   // "gpt-4o", "claude-3", etc.
+  responseText    String
+  responseTime    Int      // in milliseconds
+  tokenCount      Int?
+  cost            Float?   // in USD
+  brandMentions   BrandMention[]
+  competitorMentions CompetitorMention[]
+  sources         Source[]
+  createdAt       DateTime @default(now())
+}
+
+model BrandMention {
+  id            String      @id @default(cuid())
+  brandId       String
+  brand         Brand       @relation(fields: [brandId], references: [id], onDelete: Cascade)
+  responseId    String
+  response      LLMResponse @relation(fields: [responseId], references: [id], onDelete: Cascade)
+  mentionText   String      // The actual text mentioning the brand
+  position      Int         // Position in the response (1st, 2nd, etc.)
+  sentiment     String?     // "positive", "neutral", "negative"
+  context       String?     // Surrounding context
+  createdAt     DateTime    @default(now())
+}
+
+model CompetitorMention {
+  id            String      @id @default(cuid())
+  competitorId  String
+  competitor    Competitor  @relation(fields: [competitorId], references: [id], onDelete: Cascade)
+  responseId    String
+  response      LLMResponse @relation(fields: [responseId], references: [id], onDelete: Cascade)
+  mentionText   String
+  position      Int
+  sentiment     String?
+  context       String?
+  createdAt     DateTime    @default(now())
+}
+
+model Source {
+  id          String      @id @default(cuid())
+  responseId  String
+  response    LLMResponse @relation(fields: [responseId], references: [id], onDelete: Cascade)
+  url         String
+  title       String?
+  domain      String?
+  createdAt   DateTime    @default(now())
+} 
